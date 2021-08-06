@@ -10,7 +10,7 @@ export default function App() {
         <Text style={styles.sectionTitle}>Today's Task</Text>
 
         <View style={styles.items}>
-          <Task />
+          <Task text="hello world is awesome" />
         </View>
       </View>
     </View>
