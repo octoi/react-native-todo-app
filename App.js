@@ -21,7 +21,7 @@ export default function App() {
         <TextInput style={styles.input} placeholder="Write a task" />
         <TouchableOpacity>
           <View style={styles.addWrapper}>
-            <Text style={styles.addText}>+</Text>
+            <Text>+</Text>
           </View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
