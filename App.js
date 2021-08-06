@@ -1,6 +1,6 @@
 import React from 'react';
 import Task from './components/Task';
-import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function App() {
   return (
@@ -19,6 +19,11 @@ export default function App() {
         style={styles.writeTaskWrapper}
       >
         <TextInput style={styles.input} placeholder="Write a task" />
+        <TouchableOpacity>
+          <View style={styles.addWrapper}>
+            <Text style={styles.addText}>+</Text>
+          </View>
+        </TouchableOpacity>
       </KeyboardAvoidingView>
     </View>
   );
