@@ -14,5 +14,13 @@ export default function Task({ text }) {
 }
 
 const styles = StyleSheet.create({
-
+  item: {
+    backgroundColor: '#FFF',
+    padding: 15,
+    borderRadius: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
 });
