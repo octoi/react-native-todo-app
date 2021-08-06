@@ -18,7 +18,13 @@ export default function App() {
         <Text style={styles.sectionTitle}>Today's Task</Text>
 
         <View style={styles.items}>
-          <Task text="hello world is awesome" />
+          {taskItems && taskItems.map((taskItem, idx) => {
+            return (
+              <TouchableOpacity key={idx}>
+                <Task text={taskItem} />
+              </TouchableOpacity>
+            )
+          })}
         </View>
       </View>
 
