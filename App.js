@@ -12,6 +12,12 @@ export default function App() {
     setTask(null)
   }
 
+  const completeTask = (index) => {
+    let itemsCopy = [...taskItems];
+    itemsCopy.splice(index, 1);
+    setTaskItems(itemsCopy);
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.tasksWrapper}>
@@ -20,7 +26,7 @@ export default function App() {
         <View style={styles.items}>
           {taskItems && taskItems.map((taskItem, idx) => {
             return (
-              <TouchableOpacity key={idx}>
+              <TouchableOpacity onPress={() => completeTask(idx)} key={idx}>
                 <Task text={taskItem} />
               </TouchableOpacity>
             )
