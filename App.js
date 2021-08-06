@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import Task from './components/Task';
-import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Keyboard, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function App() {
   const [task, setTask] = useState();
+  const [taskItems, setTaskItems] = useState([]);
 
+  const handleAddTask = () => {
+    Keyboard.dismiss();
+    setTaskItems([...taskItems, task])
+    setTask(null)
+  }
 
   return (
     <View style={styles.container}>
@@ -26,7 +32,7 @@ export default function App() {
           value={task}
           onChangeText={text => setTask(text)}
         />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleAddTask}>
           <View style={styles.addWrapper}>
             <Text>+</Text>
           </View>
